@@ -1,4 +1,5 @@
-"use client"
+import { useState, useEffect } from "react"
+import Link from "next/link"
 
 interface HeroProps {
   scrollY: number
@@ -9,10 +10,9 @@ export default function Hero({ scrollY }: HeroProps) {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
       <div className="absolute inset-0 z-0">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{
+                      className="absolute inset-0 bg-cover bg-center opacity-50"          style={{
             backgroundImage:
-              "url(/placeholder.svg?height=1080&width=1920&query=sustainable-eco-friendly-packaging-materials-biodegradable-green)",
+              "url(/slider3.webp)",
             transform: `translateY(${scrollY * 0.5}px)`,
             transition: "transform 0.1s ease-out",
           }}
@@ -36,10 +36,15 @@ export default function Hero({ scrollY }: HeroProps) {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
-          <button className="px-8 py-4 bg-gradient-to-r from-emerald-600 to-green-600 text-white rounded-lg font-bold text-base hover:shadow-xl hover:scale-105 transition-all">
+          <Link href="/products" className="px-8 py-4 bg-gradient-to-r from-emerald-600 to-green-600 text-white rounded-lg font-bold text-base hover:shadow-xl hover:scale-105 transition-all">
             View Products
-          </button>
-          <button className="px-8 py-4 border-2 border-emerald-600 text-emerald-600 rounded-lg font-bold text-base hover:bg-emerald-50 transition-all">
+          </Link>
+          <button
+            onClick={() => {
+              document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+            }}
+            className="px-8 py-4 border-2 border-emerald-600 text-emerald-600 rounded-lg font-bold text-base hover:bg-emerald-50 transition-all"
+          >
             Request Quote
           </button>
         </div>
