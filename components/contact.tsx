@@ -59,17 +59,30 @@ export default function Contact() {
             {
               icon: Phone,
               title: "Call Us",
-              content: "+91 98765 43210",
+              content: (
+                <a href="tel:8610101752" className="text-emerald-700 hover:underline">
+                  +91 86101 01752
+                </a>
+              ),
             },
             {
               icon: Mail,
               title: "Email Us",
-              content: "info@aranpackaging.com",
+              content: "aran.innovpack@gmail.com",
             },
             {
               icon: MapPin,
               title: "Visit Us",
-              content: "Salem, Tamil Nadu, India",
+              content: (
+                <a
+                  href="https://maps.google.com/maps?cid=16326731438831290335"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700 transition-colors"
+                >
+                  View on Map
+                </a>
+              ),
             },
           ].map((item, index) => {
             const Icon = item.icon
