@@ -1,6 +1,7 @@
 "use client"
 
 import { Package, Leaf, Droplet, Zap } from "lucide-react"
+import Link from "next/link"
 
 const products = [
   {
@@ -110,9 +111,9 @@ export default function Products() {
     <section id="products" className="py-32 px-4 bg-white/50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-24">
-          <h2 className="text-6xl md:text-7xl font-bold text-emerald-900 mb-6">Our Product Range</h2>
+          <h2 className="text-6xl md:text-7xl font-bold text-emerald-900 mb-6">All Products</h2>
           <p className="text-emerald-700 text-2xl max-w-3xl mx-auto leading-relaxed">
-            Comprehensive eco-friendly packaging solutions for every business need
+            Complete range of eco-friendly packaging solutions
           </p>
         </div>
 
@@ -152,9 +153,21 @@ export default function Products() {
                   </div>
                   <p className="text-emerald-600 text-lg mb-6">{product.description}</p>
 
-                  <button className="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-3 rounded-lg hover:shadow-lg transition-all hover:scale-105 font-bold text-lg">
-                    {product.customizable ? "Request Custom Quote" : "Learn More"}
-                  </button>
+                  {product.customizable ? (
+                    <Link
+                      href={`/?product=${encodeURIComponent(product.name)}#contact`}
+                      className="w-full inline-flex items-center justify-center bg-gradient-to-r from-emerald-600 to-green-600 text-white py-3 rounded-lg hover:shadow-lg transition-all hover:scale-105 font-bold text-lg"
+                    >
+                      Request Custom Quote
+                    </Link>
+                  ) : (
+                    <Link
+                      href={`/products/${product.id}`}
+                      className="w-full inline-flex items-center justify-center bg-gradient-to-r from-emerald-600 to-green-600 text-white py-3 rounded-lg hover:shadow-lg transition-all hover:scale-105 font-bold text-lg"
+                    >
+                      Learn More
+                    </Link>
+                  )}
                 </div>
               </div>
             )

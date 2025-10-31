@@ -21,14 +21,10 @@ export default function Hero({ scrollY }: HeroProps) {
       </div>
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <div className="mb-6 animate-fade-in">
-          <div className="inline-block px-4 py-2 bg-emerald-100 rounded-full mb-4">
-            <span className="text-emerald-700 font-semibold text-sm">Established 2021 • Salem, India</span>
-          </div>
-        </div>
+        
 
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-emerald-900 mb-6 animate-fade-in-up leading-tight">
-          Sustainable <span className="text-green-600">Packaging</span>, Natural Future
+          Sustainable <span className="text-green-600">Packaging</span>, Materials
         </h1>
 
         <p className="text-lg md:text-xl text-emerald-700 mb-10 animate-fade-in-up animation-delay-200 max-w-2xl mx-auto leading-relaxed">
@@ -58,3 +54,4 @@ export default function Hero({ scrollY }: HeroProps) {
     </section>
   )
 }
+

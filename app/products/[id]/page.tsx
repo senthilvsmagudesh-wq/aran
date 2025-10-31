@@ -106,12 +106,22 @@ export default function ProductDetail() {
                 </ul>
               </div>
 
-              <button className="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-4 rounded-lg hover:shadow-lg transition-all hover:scale-105 font-bold text-xl mb-4">
-                {product.customizable ? "Request Custom Quote" : "Contact for Pricing"}
-              </button>
+              {product.customizable ? (
+                <Link href={`/?product=${encodeURIComponent(product.name)}#contact`}>
+                  <button className="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-4 rounded-lg hover:shadow-lg transition-all hover:scale-105 font-bold text-xl mb-4">
+                    Request Custom Quote
+                  </button>
+                </Link>
+              ) : (
+                <Link href={`/?product=${encodeURIComponent(product.name)}#contact`}>
+                  <button className="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-4 rounded-lg hover:shadow-lg transition-all hover:scale-105 font-bold text-xl mb-4">
+                    Contact for Pricing
+                  </button>
+                </Link>
+              )}
 
               <Link href="/products">
-                <button className="w-full border-2 border-emerald-600 text-emerald-600 py-4 rounded-lg hover:bg-emerald-50 transition-all font-bold text-xl">
+                <button className="w-full border-2 border-emerald-600 text-emerald-600 py-4 rounded-lg hover:bg-emerald-50 transition-all hover:scale-[1.01] font-bold text-xl">
                   View More Products
                 </button>
               </Link>

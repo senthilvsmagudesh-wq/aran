@@ -1,7 +1,7 @@
 "use client"
 
-import { useState } from "react"
-import { Mail, Phone, MapPin, Send } from "lucide-react"
+import { useState, useEffect, useRef } from "react"
+import { Mail, Phone, MapPin, Send, User } from "lucide-react"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -12,6 +12,30 @@ export default function Contact() {
     message: "",
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [prefilled, setPrefilled] = useState("")
+  const [highlight, setHighlight] = useState(false)
+  const messageRef = useRef<HTMLTextAreaElement | null>(null)
+
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    const params = new URLSearchParams(window.location.search)
+    const product = params.get("product")
+    if (product) {
+      setFormData((prev) => ({
+        ...prev,
+        message:
+          prev.message && prev.message.trim().length > 0
+            ? prev.message
+            : `Hello, I'm interested in ${product}. Please provide a custom quote with options, MOQs, lead time, and printing availability.`,
+      }))
+      setPrefilled(product)
+      setTimeout(() => {
+        messageRef.current?.focus()
+        setHighlight(true)
+        setTimeout(() => setHighlight(false), 1600)
+      }, 0)
+    }
+  }, [])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -26,7 +50,7 @@ export default function Contact() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, product: prefilled }),
       })
 
       if (response.ok) {
@@ -103,7 +127,7 @@ export default function Contact() {
           })}
         </div>
 
-        <div className="bg-gradient-to-r from-emerald-600 to-green-600 rounded-2xl p-12 text-white">
+        <div className={`bg-gradient-to-r from-emerald-600 to-green-600 rounded-2xl p-12 text-white ${highlight ? "ring-4 ring-white/40 transition" : ""}`}>
           <div className="max-w-2xl mx-auto">
             <h3 className="text-3xl font-bold mb-6">Request a Quote</h3>
             <p className="mb-6 opacity-90 text-base">
@@ -128,19 +152,19 @@ export default function Contact() {
                     required
                   />
                   <input
-                    type="email"
-                    name="email"
-                    placeholder="Your Email"
-                    value={formData.email}
+                    type="tel"
+                    name="mobile"
+                    placeholder="Mobile Number"
+                    value={formData.mobile}
                     onChange={handleChange}
                     className="px-5 py-3 rounded-lg bg-white text-emerald-900 focus:outline-none focus:ring-2 focus:ring-white text-base placeholder:text-emerald-500"
                     required
                   />
                   <input
-                    type="tel"
-                    name="mobile"
-                    placeholder="Mobile Number"
-                    value={formData.mobile}
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    value={formData.email}
                     onChange={handleChange}
                     className="w-full px-5 py-3 rounded-lg bg-white text-emerald-900 focus:outline-none focus:ring-2 focus:ring-white text-base placeholder:text-emerald-500 md:col-span-2"
                     required
@@ -149,23 +173,24 @@ export default function Contact() {
                 <input
                   type="text"
                   name="company"
-                  placeholder="Company Name"
+                  placeholder="Your's business"
                   value={formData.company}
                   onChange={handleChange}
                   className="w-full px-5 py-3 rounded-lg bg-white text-emerald-900 focus:outline-none focus:ring-2 focus:ring-white text-base placeholder:text-emerald-500"
                 />
                 <textarea
                   name="message"
-                  placeholder="Tell us about your packaging needs..."
+                  placeholder="tell us about your packaging needs.."
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
                   className="w-full px-5 py-3 rounded-lg bg-white text-emerald-900 focus:outline-none focus:ring-2 focus:ring-white text-base placeholder:text-emerald-500"
+                  ref={messageRef}
                   required
                 />
                 <button
                   type="submit"
-                  className="w-full bg-white text-emerald-600 font-bold py-3 rounded-lg hover:bg-emerald-50 transition-colors flex items-center justify-center gap-2 text-base"
+                  className="w-full bg-white text-emerald-600 font-bold py-3 rounded-lg hover:bg-emerald-50 transition-all duration-200 hover:scale-[1.01] flex items-center justify-center gap-2 text-base"
                 >
                   <Send size={20} />
                   Send Request

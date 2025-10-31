@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Facebook, Twitter, Linkedin } from "lucide-react"
+import { Facebook, Linkedin } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -15,7 +15,7 @@ export default function Footer() {
               <h3 className="text-xl font-bold">Aran Innovative Packaging</h3>
             </div>
             <p className="text-emerald-100 text-sm leading-relaxed">
-              Sustainable packaging solutions for a better tomorrow.
+              J.Jayarathana Complex, 10, Omalur Main Rd, 5, Road, Salem, Tamil Nadu 636004
             </p>
           </div>
 
@@ -82,7 +82,16 @@ export default function Footer() {
                 aria-label="X (Twitter)"
                 title="X (Twitter)"
               >
-                <Twitter size={20} />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M18.244 2H21.5l-7.52 8.592L23 22h-6.828l-5.35-6.338L4.6 22H1.34l8.06-9.2L1 2h6.93l4.823 5.833L18.244 2Zm-1.195 18h1.976L7.045 4H4.96L17.05 20Z" />
+                </svg>
               </a>
               <a
                 href="https://www.linkedin.com/in/aran-innovative-packaging-1ba569218?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
