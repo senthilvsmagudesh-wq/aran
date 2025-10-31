@@ -13,7 +13,7 @@ export default function Navigation() {
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
           <Image src="/divine-mart-logo.png" alt="Divine Mart Logo" width={40} height={40} />
-          <h1 className="text-xl font-bold text-emerald-900">Aran Packaging</h1>
+          <h1 className="text-xl font-bold text-emerald-900">Aran Innovative Packaging</h1>
         </Link>
 
         <div className="hidden md:flex gap-8">

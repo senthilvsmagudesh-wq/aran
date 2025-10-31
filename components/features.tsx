@@ -49,7 +49,7 @@ export default function Features() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-emerald-900 mb-6">Why Choose Aran Packaging?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-emerald-900 mb-6">Why Choose Aran Innovative Packaging?</h2>
           <p className="text-emerald-700 text-lg max-w-3xl mx-auto leading-relaxed">
             Industry-leading eco-friendly solutions with proven quality and sustainability
           </p>

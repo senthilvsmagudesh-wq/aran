@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+// Using inline SVG for WhatsApp logo (lucide-react has no branded WhatsApp icon)
 import Navigation from "@/components/navigation"
 import Hero from "@/components/hero"
 import HomeProducts from "@/components/home-products"
@@ -27,6 +28,36 @@ export default function Home() {
       <About />
       <Contact />
       <Footer />
+
+      <a
+        href="https://wa.me/918610101752?text=Hello%2C%20I%20am%20interested%20in%20Aran%20Innovative%20Packaging.%20Can%20you%20please%20provide%20details%20about%20your%20products%20and%20solutions%3F"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-4 right-4 z-50 rounded-full bg-green-500 p-4 text-white shadow-xl hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300"
+        aria-label="Chat on WhatsApp"
+        title="Chat on WhatsApp"
+        onClick={async (e) => {
+          const msg = "Hello, I am interested in Aran Innovative Packaging. Can you please provide details about your products and solutions?"
+          try {
+            await navigator.clipboard.writeText(msg)
+          } catch {}
+          // let the default navigation continue; ensure URL has encoded message
+          const url = `https://wa.me/918610101752?text=${encodeURIComponent(msg)}`
+          // Replace the href just before navigating to guarantee correct encoding
+          ;(e.currentTarget as HTMLAnchorElement).href = url
+        }}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="33"
+          height="33"
+          viewBox="0 0 256 256"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <path d="M187.6 68.4A87.8 87.8 0 0 0 128 44a88 88 0 0 0-75.9 129.7L40 224l51.5-11.9A88 88 0 0 0 128 212h.1a88 88 0 0 0 59.5-151.6ZM128.1 196a68 68 0 0 1-34.8-9.5l-2-.1-30.7 7.1 6.6-29.9-.7-2.2A68 68 0 1 1 128.1 196Zm39.7-47.2c-2.2-1.1-13.3-6.6-15.3-7.4s-3.6-1.1-5.2 1.1-6 7.4-7.4 9-2.7 1.6-5 .6a55.5 55.5 0 0 1-16.3-10 61.3 61.3 0 0 1-11.4-14c-1.2-2-.1-3.1.9-4.2l3-3.5c1-1.1 1.6-2 2.4-3.4a3.9 3.9 0 0 0 .2-3.7c-.6-1.1-5.3-12.7-7.3-17.4s-3.9-3.8-5.3-3.8h-4.5a8.6 8.6 0 0 0-6.2 2.9c-2.1 2.3-8.1 7.9-8.1 19.2s8.3 22.3 9.4 23.8 16.4 25.1 39.8 35.2 23.9 6.6 28.3 6.2 13.9-5.7 15.9-11.2 2-10.3 1.4-11.2-2.1-1.6-4.3-2.7Z"/>
+        </svg>
+      </a>
     </main>
   )
 }

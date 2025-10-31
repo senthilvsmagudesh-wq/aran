@@ -17,7 +17,7 @@ export default function About() {
           <div className="animate-fade-in-left">
             <img
               src="/eco-friendly-packaging-manufacturing-sustainable-p.jpg"
-              alt="Aran Packaging Facility"
+              alt="Aran Innovative Packaging Facility"
               className="rounded-2xl shadow-2xl w-full h-auto"
             />
           </div>

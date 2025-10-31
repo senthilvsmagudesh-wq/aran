@@ -61,7 +61,7 @@ export const products = [
     customizable: false,
     details:
       "Premium aluminium containers for food storage and transportation. Excellent heat retention and durability.",
-    images: ["/aluminium-containers-wraps.jpg", "/aluminium-food-containers.jpg", "/metal-storage-containers.jpg"],
+    images: ["/aluminium-containers-wraps.jpg", "/aluminium-food-containers.jpg"],
     specs: ["Durable Aluminium", "Heat Resistant", "Recyclable", "Various Sizes"],
   },
   {
@@ -118,8 +118,8 @@ export const products = [
   },
   {
     id: 10,
-    name: "Areca & Bagasse Plates",
-    description: "Natural fiber plates made from areca and bagasse materials",
+    name: "Areca Plates",
+    description: "Natural fiber plates made from areca materials",
     image: "/areca-bagasse-plates-natural-fiber.jpg",
     category: "Plates",
     icon: Leaf,
@@ -127,8 +127,7 @@ export const products = [
     details: "100% natural and compostable plates made from agricultural waste materials.",
     images: [
       "/areca-bagasse-plates-natural-fiber.jpg",
-      "/placeholder.svg?height=400&width=400",
-      "/placeholder.svg?height=400&width=400",
+      "/areca-bagasse-plates-natural-fiber.jpg",
     ],
     specs: ["100% Compostable", "Natural Material", "Sturdy", "Microwave Safe"],
   },
@@ -147,6 +146,21 @@ export const products = [
       "/placeholder.svg?height=400&width=400",
     ],
     specs: ["Food Grade", "Latex Free", "Disposable", "Various Sizes"],
+  },
+  {
+    id: 13,
+    name: "Bagasse Plates",
+    description: "Natural fiber plates made from bagasse materials",
+    image: "/disposable-eco-friendly-plates-bowls-natural-fiber.jpg",
+    category: "Plates",
+    icon: Leaf,
+    customizable: false,
+    details: "100% natural and compostable plates made from agricultural waste materials.",
+    images: [
+      "/disposable-eco-friendly-plates-bowls-natural-fiber.jpg",
+      "/areca-bagasse-plates-natural-fiber.jpg",
+    ],
+    specs: ["100% Compostable", "Natural Material", "Sturdy", "Microwave Safe"],
   },
   {
     id: 12,

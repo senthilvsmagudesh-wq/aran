@@ -8,6 +8,7 @@ export default function Contact() {
     name: "",
     email: "",
     company: "",
+    mobile: "",
     message: "",
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -30,7 +31,7 @@ export default function Contact() {
 
       if (response.ok) {
         setIsSubmitted(true)
-        setFormData({ name: "", email: "", company: "", message: "" })
+        setFormData({ name: "", email: "", company: "", mobile: "", message: "" })
       }
     } catch (error) {
       console.error("Error submitting form:", error)
@@ -133,6 +134,15 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     className="px-5 py-3 rounded-lg bg-white text-emerald-900 focus:outline-none focus:ring-2 focus:ring-white text-base placeholder:text-emerald-500"
+                    required
+                  />
+                  <input
+                    type="tel"
+                    name="mobile"
+                    placeholder="Mobile Number"
+                    value={formData.mobile}
+                    onChange={handleChange}
+                    className="w-full px-5 py-3 rounded-lg bg-white text-emerald-900 focus:outline-none focus:ring-2 focus:ring-white text-base placeholder:text-emerald-500 md:col-span-2"
                     required
                   />
                 </div>
