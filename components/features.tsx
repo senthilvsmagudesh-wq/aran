@@ -75,18 +75,16 @@ export default function Features() {
         </div>
 
         <div className="mt-16">
+          <h3 className="text-2xl md:text-3xl font-bold text-emerald-900 text-center mb-8">Certifications</h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-center">
             <div className="flex flex-col items-center bg-white p-6 rounded-xl shadow">
-              <img src="/iso.png" alt="ISO 17088" className="h-12 w-auto mb-3" />
-              <div className="text-emerald-900 font-semibold">ISO 17088</div>
+              <img src="/iso.png" alt="ISO 17088" className="h-48 w-auto mb-3" />
             </div>
             <div className="flex flex-col items-center bg-white p-6 rounded-xl shadow">
-              <img src="/cpcb.webp" alt="CPCB" className="h-12 w-auto mb-3" />
-              <div className="text-emerald-900 font-semibold">CPCB Certified</div>
+              <img src="/cpcb.webp" alt="CPCB" className="h-48 w-auto mb-3" />
             </div>
             <div className="flex flex-col items-center bg-white p-6 rounded-xl shadow">
-              <img src="/tnpcb.jpg" alt="TNPCB" className="h-12 w-auto mb-3" />
-              <div className="text-emerald-900 font-semibold">TNPCB Certified</div>
+              <img src="/tnpcb.jpg" alt="TNPCB" className="h-48 w-auto mb-3" />
             </div>
           </div>
         </div>

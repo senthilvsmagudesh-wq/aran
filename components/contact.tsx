@@ -26,7 +26,7 @@ export default function Contact() {
         message:
           prev.message && prev.message.trim().length > 0
             ? prev.message
-            : `Hello, I'm interested in ${product}. Please provide a custom quote with options, MOQs, lead time, and printing availability.`,
+            : `I am interested in this product: ${product}`,
       }))
       setPrefilled(product)
       setTimeout(() => {

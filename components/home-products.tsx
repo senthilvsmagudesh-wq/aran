@@ -51,7 +51,7 @@ export default function HomeProducts() {
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-3 justify-center mb-10">
+        <div className="hidden flex-wrap gap-3 justify-center mb-10">
           {categories.map(({ key, label, icon: Icon, color }) => {
             const active = selectedKey === key
             const colorMap: Record<string, string> = {
@@ -84,8 +84,8 @@ export default function HomeProducts() {
           {featuredProducts.map((product, index) => {
             const Icon = product.icon
             return (
-              <Link key={product.id} href={`/products/${product.id}`}>
-                <div
+              <div
+                key={product.id}
                   className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-transform duration-300 ease-out hover:-translate-y-2 animate-fade-in-up cursor-pointer h-full will-change-transform"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -95,18 +95,7 @@ export default function HomeProducts() {
                       alt={product.name}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 ease-out will-change-transform"
                     />
-                    <div
-                      className={`absolute top-3 right-3 px-3 py-1 rounded-full text-sm font-bold ${
-                        product.customizable ? "bg-amber-500 text-white" : "bg-emerald-600 text-white"
-                      }`}
-                    >
-                      {product.category}
-                    </div>
-                    {product.customizable && (
-                      <div className="absolute top-3 left-3 bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-bold">
-                        Customizable
-                      </div>
-                    )}
+                    {/* Category badges hidden as requested */}
                   </div>
 
                   <div className="p-6">
@@ -116,12 +105,13 @@ export default function HomeProducts() {
                     </div>
                     <p className="text-emerald-600 text-base mb-5">{product.description}</p>
 
-                    <button className="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-2 rounded-lg hover:shadow-lg transition-all hover:scale-105 font-bold text-base">
-                      View Details
-                    </button>
+                    <Link href={`/products/${product.id}`}>
+                      <button className="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-2 rounded-lg hover:shadow-lg transition-all hover:scale-105 font-bold text-base">
+                        View Details
+                      </button>
+                    </Link>
                   </div>
                 </div>
-              </Link>
             )
           })}
         </div>

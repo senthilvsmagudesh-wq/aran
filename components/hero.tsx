@@ -27,8 +27,8 @@ export default function Hero({ scrollY }: HeroProps) {
           Sustainable <span className="text-green-600">Packaging</span> Materials
         </h1>
 
-        <p className="text-lg md:text-xl text-emerald-700 mb-10 animate-fade-in-up animation-delay-200 max-w-2xl mx-auto leading-relaxed">
-          Biodegradable, Compostable, And Eco-Friendly Packaging Solutions For Businesses Committed To Sustainability
+        <p className="text-base md:text-xl text-emerald-700 mb-10 animate-fade-in-up animation-delay-200 max-w-2xl mx-auto leading-relaxed">
+          Biodegradable, Compostable And Eco-Friendly Packaging Solutions For Businesses Committed to Sustainability
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
