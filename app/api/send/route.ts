@@ -8,7 +8,7 @@ export async function POST(request: Request) {
     const data = await resend.emails.send({
       from: "onboarding@resend.dev",
       to: "senthilvsmagudesh@gmail.com",
-      subject: `New Quote Request${product ? ` — ${product}` : ""} | Aran Innovative Packaging`,
+      subject: `New Quote Request${name ? ` (${name})` : ""} | Aran Innovative Packaging`,
       html: `
         <div style="font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background:#f0fdf4; padding:24px;">
           <div style="max-width:680px; margin:0 auto; background:#ffffff; border-radius:16px; box-shadow:0 10px 25px rgba(16,185,129,0.15); overflow:hidden;">

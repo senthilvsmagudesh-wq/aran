@@ -15,7 +15,10 @@ export default function Footer() {
               <h3 className="text-xl font-bold">Aran Innovative Packaging</h3>
             </div>
             <p className="text-emerald-100 text-sm leading-relaxed">
-              J.Jayarathana Complex, 10, Omalur Main Rd, 5, Road, Salem, Tamil Nadu 636004
+              No.10,<br />
+              J.Jayarathana Complex,<br />
+              Omalur Main Rd, Five roads,<br />
+              Salem, Tamil Nadu 636004
             </p>
           </div>
 
