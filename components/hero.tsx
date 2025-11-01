@@ -12,7 +12,7 @@ export default function Hero({ scrollY }: HeroProps) {
         <div
                       className="absolute inset-0 bg-cover bg-center opacity-50"          style={{
             backgroundImage:
-              "url(/slider3.png)",
+              "url(/slide4.png)",
             transform: `translateY(${scrollY * 0.5}px)`,
             transition: "transform 0.1s ease-out",
           }}
