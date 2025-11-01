@@ -77,15 +77,15 @@ export default function Features() {
         <div className="mt-16">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-center">
             <div className="flex flex-col items-center bg-white p-6 rounded-xl shadow">
-              <img src="/placeholder-logo.svg" alt="ISO 17088" className="h-12 w-auto mb-3" />
+              <img src="/iso.png" alt="ISO 17088" className="h-12 w-auto mb-3" />
               <div className="text-emerald-900 font-semibold">ISO 17088</div>
             </div>
             <div className="flex flex-col items-center bg-white p-6 rounded-xl shadow">
-              <img src="/placeholder-logo.svg" alt="CPCB" className="h-12 w-auto mb-3" />
+              <img src="/cpcb.webp" alt="CPCB" className="h-12 w-auto mb-3" />
               <div className="text-emerald-900 font-semibold">CPCB Certified</div>
             </div>
             <div className="flex flex-col items-center bg-white p-6 rounded-xl shadow">
-              <img src="/placeholder-logo.svg" alt="TNPCB" className="h-12 w-auto mb-3" />
+              <img src="/tnpcb.jpg" alt="TNPCB" className="h-12 w-auto mb-3" />
               <div className="text-emerald-900 font-semibold">TNPCB Certified</div>
             </div>
           </div>
