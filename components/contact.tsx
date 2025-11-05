@@ -199,6 +199,44 @@ export default function Contact() {
             )}
           </div>
         </div>
+
+        <div className="mt-12">
+          <h3 className="text-2xl font-bold text-emerald-900 mb-2">Shop Location</h3>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-4">
+            <div className="flex items-start gap-2 text-emerald-800">
+              <MapPin size={20} className="mt-0.5 shrink-0" />
+              <p className="text-base">
+                No.10, J.Jayarathana Complex, Omalur Main Road, Five Roads, Salem, Tamil Nadu 636004
+              </p>
+            </div>
+            <a
+              href={
+                `https://www.google.com/maps?daddr=11.676964831404963,78.13350050066198+(Aran+Packaging)`
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition-colors text-sm w-max"
+            >
+              Get Directions
+            </a>
+          </div>
+          <div className="rounded-2xl overflow-hidden shadow-lg border border-emerald-100 bg-transparent">
+            <div className="relative w-full h-[380px] md:h-[520px]">
+              <div className="absolute left-3 top-3 z-10 inline-flex items-center gap-2 rounded-md bg-white/90 px-3 py-2 text-sm font-semibold text-emerald-900 shadow">
+                <MapPin size={16} className="text-emerald-700" />
+                Aran Packaging
+              </div>
+              <iframe
+                title="Aran Innovative Packaging Location"
+                src={`https://www.google.com/maps?q=11.676964831404963,78.13350050066198%20(Aran%20Packaging)&z=16&hl=en&output=embed`}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full border-0"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

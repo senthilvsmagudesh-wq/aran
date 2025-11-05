@@ -2,24 +2,47 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Facebook, Linkedin } from "lucide-react"
+import { Facebook, Linkedin, Phone, Mail, MapPin } from "lucide-react"
 
 export default function Footer() {
   return (
     <footer className="bg-emerald-900 text-white py-12 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
               <Image src="/divine-mart-logo.png" alt="Aran Innovative Packaging Logo" width={36} height={36} className="rounded" />
               <h3 className="text-xl font-bold">Aran Innovative Packaging</h3>
             </div>
             <p className="text-emerald-100 text-sm leading-relaxed">
-              No.10,<br />
-              J.Jayarathana Complex,<br />
-              Omalur Main Rd, Five roads,<br />
+              No.10, J.Jayarathana Complex,<br />
+              Omalur Main Road, Five Roads,<br />
               Salem, Tamil Nadu 636004
             </p>
+          </div>
+
+          <div>
+            <h4 className="font-bold mb-4 text-base">Contact</h4>
+            <ul className="space-y-2 text-emerald-100 text-sm">
+              <li>
+                <div className="flex items-center gap-2">
+                  <Phone size={16} className="shrink-0" />
+                  <a href="tel:8610101752" className="hover:text-white transition-colors">+91 86101 01752</a>
+                </div>
+              </li>
+              <li>
+                <div className="flex items-center gap-2">
+                  <Mail size={16} className="shrink-0" />
+                  <a href="mailto:aran.innovpack@gmail.com" className="hover:text-white transition-colors">aran.innovpack@gmail.com</a>
+                </div>
+              </li>
+              <li>
+                <div className="flex items-center gap-2">
+                  <MapPin size={16} className="shrink-0" />
+                  <a href="https://maps.google.com/maps?cid=16326731438831290335" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">View on Google Maps</a>
+                </div>
+              </li>
+            </ul>
           </div>
 
           <div>
