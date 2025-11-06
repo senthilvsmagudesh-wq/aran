@@ -20,16 +20,16 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="bg-gradient-to-b from-emerald-50 via-green-50 to-white">
-      <Navigation />
-      <Hero scrollY={scrollY} />
-      <HomeProducts />
-      <Features />
-      <About />
-      <Contact />
-      <Footer />
+    <main className="min-h-screen flex flex-col bg-gradient-to-b from-emerald-50 via-green-50 to-white">
+      <div className="flex-1 pb-24">
+        <Navigation />
+        <Hero scrollY={scrollY} />
+        <HomeProducts />
+        <Features />
+        <About />
+        <Contact />
 
-      <a
+        <a
         href="https://wa.me/918610101752?text=Hello%2C%20I%20am%20interested%20in%20Aran%20Innovative%20Packaging.%20Can%20you%20please%20provide%20details%20about%20your%20products%20and%20solutions%3F"
         target="_blank"
         rel="noopener noreferrer"
@@ -48,7 +48,9 @@ export default function Home() {
         }}
       >
         <Image src="/whatsapp.svg" alt="WhatsApp" width={40} height={40} priority />
-      </a>
+        </a>
+      </div>
+      <Footer />
     </main>
   )
 }

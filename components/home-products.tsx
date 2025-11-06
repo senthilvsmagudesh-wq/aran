@@ -89,7 +89,7 @@ export default function HomeProducts() {
                   className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-transform duration-300 ease-out hover:-translate-y-2 animate-fade-in-up cursor-pointer h-full will-change-transform"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="relative h-64 overflow-hidden bg-emerald-100">
+                  <div className="relative h-80 overflow-hidden bg-emerald-100">
                     <img
                       src={product.image || "/placeholder.svg"}
                       alt={product.name}

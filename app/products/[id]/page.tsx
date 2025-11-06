@@ -27,31 +27,32 @@ export default function ProductDetail() {
   }
 
   return (
-    <main className="bg-gradient-to-b from-emerald-50 via-green-50 to-white min-h-screen">
-      <Navigation />
+    <main className="bg-gradient-to-b from-emerald-50 via-green-50 to-white min-h-screen flex flex-col">
+      <div className="flex-1">
+        <Navigation />
 
-      <div className="pt-32 px-4 pb-20">
-        <div className="max-w-7xl mx-auto">
-          <Link
-            href="/products"
-            className="flex items-center gap-2 text-emerald-600 hover:text-emerald-700 mb-8 font-semibold"
-          >
-            <ArrowLeft size={20} />
-            Back to Products
-          </Link>
+        <div className="pt-32 px-4 pb-56">
+          <div className="max-w-7xl mx-auto">
+            <Link
+              href="/products"
+              className="flex items-center gap-2 text-emerald-600 hover:text-emerald-700 mb-8 font-semibold"
+            >
+              <ArrowLeft size={20} />
+              Back to Products
+            </Link>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Images Section */}
-            <div>
-              <div className="bg-emerald-100 rounded-2xl overflow-hidden mb-6 h-96 lg:h-full">
-                <img
-                  src={product.images[selectedImage] || "/placeholder.svg"}
-                  alt={product.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+              {/* Images Section */}
+              <div>
+                <div className="bg-emerald-100 rounded-2xl overflow-hidden mb-6 h-[520px]">
+                  <img
+                    src={product.images[selectedImage] || "/placeholder.svg"}
+                    alt={product.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
 
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-4 mb-12">
                 {product.images.map((img, idx) => (
                   <button
                     key={idx}
@@ -120,6 +121,7 @@ export default function ProductDetail() {
             </div>
           </div>
         </div>
+      </div>
       </div>
 
       <Footer />
