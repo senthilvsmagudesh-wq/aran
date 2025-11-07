@@ -39,7 +39,18 @@ export default function HomeProducts() {
     return p.category === map[key]
   }
 
-  const featuredProducts = products.filter((p) => keyToFilter(selectedKey, p)).slice(0, 6)
+  // Enforce fixed order for Featured Products regardless of category selection
+  const featuredOrder = [
+    "Bio Carry Bags",
+    "Brown Bag & Covers",
+    "Bio Paper Cups & Containers",
+    "PP Food Containers",
+    "PET Hinged Containers",
+    "Aluminium Containers",
+  ]
+  const featuredProducts = featuredOrder
+    .map((name) => products.find((p) => p.name === name))
+    .filter(Boolean) as typeof products
 
   return (
     <section id="products" className="py-24 px-4 bg-white/50">
@@ -84,8 +95,8 @@ export default function HomeProducts() {
           {featuredProducts.map((product, index) => {
             const Icon = product.icon
             return (
-              <div
-                key={product.id}
+              <Link key={product.id} href={`/products/${product.id}`} className="block">
+                <div
                   className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-transform duration-300 ease-out hover:-translate-y-2 animate-fade-in-up cursor-pointer h-full will-change-transform"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -95,7 +106,6 @@ export default function HomeProducts() {
                       alt={product.name}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 ease-out will-change-transform"
                     />
-                    {/* Category badges hidden as requested */}
                   </div>
 
                   <div className="p-6">
@@ -105,13 +115,12 @@ export default function HomeProducts() {
                     </div>
                     <p className="text-emerald-600 text-base mb-5">{product.description}</p>
 
-                    <Link href={`/products/${product.id}`}>
-                      <button className="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-2 rounded-lg hover:shadow-lg transition-all hover:scale-105 font-bold text-base">
-                        View Details
-                      </button>
-                    </Link>
+                    <div className="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-2 rounded-lg hover:shadow-lg transition-all hover:scale-105 font-bold text-base text-center">
+                      View Details
+                    </div>
                   </div>
                 </div>
+              </Link>
             )
           })}
         </div>

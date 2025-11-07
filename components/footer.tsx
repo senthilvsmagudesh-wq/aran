@@ -89,29 +89,29 @@ export default function Footer() {
 
           <div>
             <h4 className="font-bold mb-4 text-base">Follow Us</h4>
-            <div className="flex gap-3">
+            <div className="flex gap-4">
               <a
                 href="https://www.facebook.com/share/19E9fNtrzs/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-emerald-800 rounded-full hover:bg-emerald-700 transition-colors"
+                className="p-3 bg-emerald-800 rounded-full hover:bg-emerald-700 transition-colors"
                 aria-label="Facebook"
                 title="Facebook"
               >
-                <Facebook size={20} />
+                <Facebook size={28} />
               </a>
               <a
                 href="https://x.com/aran_innov_pack?t=bdFedk9h1i3sAKZQu-PBqw&s=09"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-emerald-800 rounded-full hover:bg-emerald-700 transition-colors"
+                className="p-3 bg-emerald-800 rounded-full hover:bg-emerald-700 transition-colors"
                 aria-label="X (Twitter)"
                 title="X (Twitter)"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
+                  width="28"
+                  height="28"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                   aria-hidden="true"
@@ -123,17 +123,17 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/aran-innovative-packaging-1ba569218?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-emerald-800 rounded-full hover:bg-emerald-700 transition-colors"
+                className="p-3 bg-emerald-800 rounded-full hover:bg-emerald-700 transition-colors"
                 aria-label="LinkedIn"
                 title="LinkedIn"
               >
-                <Linkedin size={20} />
+                <Linkedin size={28} />
               </a>
               <a
                 href="https://wa.me/918610101752?text=Hello%2C%20I%20am%20interested%20in%20Aran%20Innovative%20Packaging.%20Can%20you%20please%20provide%20details%20about%20your%20products%20and%20solutions%3F"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-emerald-800 rounded-full hover:bg-emerald-700 transition-colors"
+                className="p-3 bg-emerald-800 rounded-full hover:bg-emerald-700 transition-colors"
                 aria-label="WhatsApp"
                 title="WhatsApp"
                 onClick={async (e) => {
@@ -148,8 +148,8 @@ export default function Footer() {
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
+                  width="28"
+                  height="28"
                   viewBox="0 0 256 256"
                   fill="currentColor"
                   aria-hidden="true"

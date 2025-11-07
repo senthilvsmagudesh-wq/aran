@@ -5,7 +5,7 @@ import { CheckCircle, Leaf, Zap, Shield, Globe, Award } from "lucide-react"
 const features = [
   {
     icon: Leaf,
-    title: "100% Biodegradable",
+    title: "100% Biocompostable",
     description: "All products break down naturally without harming the environment",
   },
   {
@@ -53,6 +53,31 @@ export default function Features() {
           <p className="text-emerald-700 text-lg max-w-3xl mx-auto leading-relaxed">
             Industry-leading eco-friendly solutions with proven quality and sustainability
           </p>
+        </div>
+
+        {/* Image cards row first */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+            <img src="/compostable.jpg" alt="100% Biocompostable" className="w-full h-44 object-cover" />
+            <div className="p-6">
+              <h3 className="text-xl font-bold text-emerald-900 mb-2">100% Biocompostable</h3>
+              <p className="text-emerald-600 text-base">Certified compostable materials that return safely to nature.</p>
+            </div>
+          </div>
+          <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+            <img src="/cycle.jpg" alt="Circular Lifecycle" className="w-full h-56 object-cover" />
+            <div className="p-6">
+              <h3 className="text-xl font-bold text-emerald-900 mb-2">Circular Lifecycle</h3>
+              <p className="text-emerald-600 text-base">Designed for a sustainable cycle from use to compost.</p>
+            </div>
+          </div>
+          <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
+            <img src="/eco.jpg" alt="Eco-Friendly" className="w-full h-44 object-cover" />
+            <div className="p-6">
+              <h3 className="text-xl font-bold text-emerald-900 mb-2">Eco-Friendly</h3>
+              <p className="text-emerald-600 text-base">Low-impact solutions supporting greener operations.</p>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

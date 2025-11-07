@@ -6,17 +6,31 @@ interface HeroProps {
 }
 
 export default function Hero({ scrollY }: HeroProps) {
+  const slides = ["/slide4.png", "/slide5.webp"]
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % slides.length)
+    }, 3000)
+    return () => clearInterval(id)
+  }, [])
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
       <div className="absolute inset-0 z-0">
-        <div
-                      className="absolute inset-0 bg-cover bg-center opacity-50"          style={{
-            backgroundImage:
-              "url(/slide4.png)",
-            transform: `translateY(${scrollY * 0.5}px)`,
-            transition: "transform 0.1s ease-out",
-          }}
-        />
+        {slides.map((src, i) => (
+          <div
+            key={src}
+            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-[1200ms] ease-in-out`}
+            style={{
+              backgroundImage: `url(${src})`,
+              opacity: index === i ? 0.55 : 0,
+              transform: `translateY(${scrollY * 0.5}px)`,
+              transitionProperty: "opacity, transform",
+            }}
+          />
+        ))}
         <div className="absolute inset-0 bg-gradient-to-b from-emerald-900/20 via-green-800/10 to-emerald-900/30" />
       </div>
 

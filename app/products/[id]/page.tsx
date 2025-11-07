@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, type MouseEvent } from "react"
 import Link from "next/link"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
@@ -26,6 +26,19 @@ export default function ProductDetail() {
     )
   }
 
+  const whatsappHref = (msg: string) => `https://wa.me/918610101752?text=${encodeURIComponent(msg)}`
+  const whatsappMessage = `Hello, I'm interested in ${product.name}.`
+  const onWhatsAppClick = async (e: MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
+    try {
+      await navigator.clipboard.writeText(whatsappMessage)
+    } catch {}
+    if (e.currentTarget instanceof HTMLAnchorElement) {
+      e.currentTarget.href = whatsappHref(whatsappMessage)
+    } else {
+      window.open(whatsappHref(whatsappMessage), "_blank")
+    }
+  }
+
   return (
     <main className="bg-gradient-to-b from-emerald-50 via-green-50 to-white min-h-screen flex flex-col">
       <div className="flex-1">
@@ -44,13 +57,20 @@ export default function ProductDetail() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
               {/* Images Section */}
               <div>
-                <div className="bg-emerald-100 rounded-2xl overflow-hidden mb-6 h-[520px]">
+                <a
+                  href={whatsappHref(whatsappMessage)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={onWhatsAppClick}
+                  className="block bg-emerald-100 rounded-2xl overflow-hidden mb-6 h-[520px] group"
+                  aria-label="Request Quote on WhatsApp"
+                >
                   <img
                     src={product.images[selectedImage] || "/placeholder.svg"}
                     alt={product.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:opacity-95 transition"
                   />
-                </div>
+                </a>
 
               <div className="grid grid-cols-3 gap-4 mb-12">
                 {product.images.map((img, idx) => (
@@ -107,11 +127,25 @@ export default function ProductDetail() {
                 </ul>
               </div>
 
-              <Link href={`/?product=${encodeURIComponent(product.name)}#contact`}>
-                <button className="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-4 rounded-lg hover:shadow-lg transition-all hover:scale-105 font-bold text-xl mb-4">
-                  Request Quote
-                </button>
-              </Link>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <a
+                  href={whatsappHref(whatsappMessage)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={onWhatsAppClick}
+                  className="block w-full"
+                >
+                  <button className="w-full bg-gradient-to-r from-emerald-600 to-green-600 text-white py-4 rounded-lg hover:shadow-lg transition-all hover:scale-105 font-bold text-xl">
+                    Request Quote on WhatsApp
+                  </button>
+                </a>
+
+                <Link href={`/?product=${encodeURIComponent(product.name)}#contact`} className="block w-full">
+                  <button className="w-full border-2 border-emerald-600 text-emerald-600 py-4 rounded-lg hover:bg-emerald-50 transition-all hover:scale-[1.01] font-bold text-xl">
+                    Request Quote
+                  </button>
+                </Link>
+              </div>
 
               <Link href="/products">
                 <button className="w-full border-2 border-emerald-600 text-emerald-600 py-4 rounded-lg hover:bg-emerald-50 transition-all hover:scale-[1.01] font-bold text-xl">
