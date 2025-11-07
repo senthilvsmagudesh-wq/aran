@@ -94,6 +94,10 @@ export default function HomeProducts() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredProducts.map((product, index) => {
             const Icon = product.icon
+            const cardImage =
+              product.name === "Brown Bag & Covers" && Array.isArray((product as any).images) && (product as any).images[1]
+                ? (product as any).images[1]
+                : (product.image || "/placeholder.svg")
             return (
               <Link key={product.id} href={`/products/${product.id}`} className="block">
                 <div
@@ -102,7 +106,7 @@ export default function HomeProducts() {
                 >
                   <div className="relative h-80 overflow-hidden bg-emerald-100">
                     <img
-                      src={product.image || "/placeholder.svg"}
+                      src={cardImage}
                       alt={product.name}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 ease-out will-change-transform"
                     />

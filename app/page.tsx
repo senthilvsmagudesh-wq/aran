@@ -30,14 +30,14 @@ export default function Home() {
         <Contact />
 
         <a
-        href="https://wa.me/918610101752?text=Hello%2C%20I%20am%20interested%20in%20Aran%20Innovative%20Packaging.%20Can%20you%20please%20provide%20details%20about%20your%20products%20and%20solutions%3F"
+        href="https://wa.me/918610101752?text=Hello%2C%20I%27m%20interested%20in%20Aran%20Innovative%20Packaging."
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-4 right-4 z-50 rounded-full bg-green-500 p-4 text-white shadow-xl hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300"
         aria-label="Chat on WhatsApp"
         title="Chat on WhatsApp"
         onClick={async (e) => {
-          const msg = "Hello, I am interested in Aran Innovative Packaging. Can you please provide details about your products and solutions?"
+          const msg = "Hello, I'm interested in Aran Innovative Packaging."
           try {
             await navigator.clipboard.writeText(msg)
           } catch {}

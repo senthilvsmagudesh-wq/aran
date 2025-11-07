@@ -130,15 +130,14 @@ export default function Footer() {
                 <Linkedin size={28} />
               </a>
               <a
-                href="https://wa.me/918610101752?text=Hello%2C%20I%20am%20interested%20in%20Aran%20Innovative%20Packaging.%20Can%20you%20please%20provide%20details%20about%20your%20products%20and%20solutions%3F"
+                href="https://wa.me/918610101752?text=Hello%2C%20I%27m%20interested%20in%20Aran%20Innovative%20Packaging."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-emerald-800 rounded-full hover:bg-emerald-700 transition-colors"
                 aria-label="WhatsApp"
                 title="WhatsApp"
                 onClick={async (e) => {
-                  const msg =
-                    "Hello, I am interested in Aran Innovative Packaging. Can you please provide details about your products and solutions?"
+                  const msg = "Hello, I'm interested in Aran Innovative Packaging."
                   try {
                     await navigator.clipboard.writeText(msg)
                   } catch {}

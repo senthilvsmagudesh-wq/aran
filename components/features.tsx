@@ -58,21 +58,27 @@ export default function Features() {
         {/* Image cards row first */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
-            <img src="/compostable.jpg" alt="100% Biocompostable" className="w-full h-44 object-cover" />
+            <div className="h-44 flex items-center justify-center">
+              <img src="/compostable.jpg" alt="100% Biocompostable" className="max-h-full max-w-full object-contain" />
+            </div>
             <div className="p-6">
               <h3 className="text-xl font-bold text-emerald-900 mb-2">100% Biocompostable</h3>
               <p className="text-emerald-600 text-base">Certified compostable materials that return safely to nature.</p>
             </div>
           </div>
           <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
-            <img src="/cycle.jpg" alt="Circular Lifecycle" className="w-full h-56 object-cover" />
+            <div className="h-44 flex items-center justify-center">
+              <img src="/cycle.jpg" alt="Recycling" className="max-h-full max-w-full object-contain" />
+            </div>
             <div className="p-6">
-              <h3 className="text-xl font-bold text-emerald-900 mb-2">Circular Lifecycle</h3>
+              <h3 className="text-xl font-bold text-emerald-900 mb-2">Recycling</h3>
               <p className="text-emerald-600 text-base">Designed for a sustainable cycle from use to compost.</p>
             </div>
           </div>
           <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
-            <img src="/eco.jpg" alt="Eco-Friendly" className="w-full h-44 object-cover" />
+            <div className="h-44 flex items-center justify-center">
+              <img src="/eco.jpg" alt="Eco-Friendly" className="max-h-full max-w-full object-contain" />
+            </div>
             <div className="p-6">
               <h3 className="text-xl font-bold text-emerald-900 mb-2">Eco-Friendly</h3>
               <p className="text-emerald-600 text-base">Low-impact solutions supporting greener operations.</p>
@@ -81,7 +87,9 @@ export default function Features() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => {
+          {features
+            .filter((f) => f.title !== "100% Biocompostable")
+            .map((feature, index) => {
             const Icon = feature.icon
             return (
               <div
