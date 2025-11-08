@@ -211,7 +211,7 @@ export default function Contact() {
             </div>
             <a
               href={
-                `https://www.google.com/maps?daddr=11.676964831404963,78.13350050066198+(Aran+Packaging)`
+                `https://www.google.com/maps?daddr=11.676964831404963,78.13350050066198`
               }
               target="_blank"
               rel="noopener noreferrer"
@@ -222,13 +222,9 @@ export default function Contact() {
           </div>
           <div className="rounded-2xl overflow-hidden shadow-lg border border-emerald-100 bg-transparent">
             <div className="relative w-full h-[380px] md:h-[520px]">
-              <div className="absolute left-3 top-3 z-10 inline-flex items-center gap-2 rounded-md bg-white/90 px-3 py-2 text-sm font-semibold text-emerald-900 shadow">
-                <MapPin size={16} className="text-emerald-700" />
-                Aran Packaging
-              </div>
               <iframe
                 title="Aran Innovative Packaging Location"
-                src={`https://www.google.com/maps?q=11.676964831404963,78.13350050066198%20(Aran%20Packaging)&z=16&hl=en&output=embed`}
+                src={`https://www.google.com/maps?q=11.676964831404963,78.13350050066198&z=16&hl=en&output=embed`}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="w-full h-full border-0"
